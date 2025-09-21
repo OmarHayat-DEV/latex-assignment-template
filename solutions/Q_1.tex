@@ -1,0 +1,57 @@
+\pagebreak
+
+\section*{Q1}
+\begin{solution}[\textbf{2}]
+\hfill\break
+\textbf{a)} First we show that if $u$ is a solution to $u_t +  uu_x = 0$, then $w = u^2$ is a smooth solution of $(2)$. 
+\begin{align*}
+    u_t + uu_x &= 0 \\
+    (2u)u_t + (2u)u_x &= 0 \\
+    2uu_t + 2uu_x &= 0 \\
+    \left(u^2\right)_t + \left(\frac{2}{3} (u^2)^{\frac{3}{2}}\right)_x &= 0 \ \ \text{Since $u$ is smooth.} \\
+    w_t + \left(\frac{2}{3} w ^{\frac{3}{2}}    \right)_x &= 0
+\end{align*}
+In the other direction, we start with $w = u^2$ as a solution to $w_t + \left(\frac{2}{3}w^{\frac{3}{2}}\right)_x  = 0$.
+\begin{align*}
+    w_t + \left(\frac{2}{3}w^{\frac{3}{2}}\right)_x &= 0 \\
+    (u^2)_t + \left(\frac{2}{3}u^{3}\right)_x &= 0 \\
+    2uu_t + 2u^2u_x &= 0 \ \ \text{Since $u$ is smooth.} \\
+    2u(u_t + uu_x) &= 0
+\end{align*}
+Thus we have two cases. If $u = 0$, then trivially, $(1)$ holds. Otherwise if $u > 0$, then we can divide by $2u$ giving us that,
+\begin{align*}
+u_t + uu_x = 0
+\end{align*}
+as required. This concludes the proof in both directions.
+\hfill\break
+\hfill\break
+\textbf{b)} \quad Consider the initial conditions given by,
+\begin{align*}
+    u(x,0) = \begin{cases} 2, & x < 0 \\ 1, & x > 0\end{cases} \\
+    w(x,0) = \begin{cases} 4, & x < 0 \\ 1, & x > 0\end{cases}
+\end{align*}
+This initial condition defines a shock starting at $t = 0$, we can find the shock speed for $u$ and $w = u^2$. We can compute the shock speed for $u$ and $w$ with the Rankine-Hugoniot condition,
+\begin{align*}
+    s_u = \frac{f(u_r) - f(u_l)}{u_r - u_l} &= \frac{1}{2}\frac{u_r^2 - u_l^2}{u_r - u_l} \\
+    \text{sub } \ \ u_r = 1, \  &u_l = 2 \\
+                                &= \frac{1}{2} \frac{1 - 4}{1 - 2} \\
+                                &= \frac{3}{2}
+\end{align*}
+\begin{align*}
+    s_w &= \frac{f(w_r) - f(w_l)}{w_r - w_l} \\
+        &= \frac{2}{3} \cdot \frac{w_r^{\frac{3}{2}} - w_l^{\frac{3}{2}}}{w_r - w_l} \\
+        &= \frac{2}{3} \cdot \frac{1 - 4^{\frac{3}{2}}}{1 - 4}\\
+        &= \frac{14}{9}
+\end{align*}
+Where $s_u$ is the shock speed for $u$ and $s_w$ is the shock speed for $w$. Now we can show that there is a time $t$ such that $u^2 \neq w$. Define $x_u$ as the position at time $t$ of shockwave $u$ and $x_w$ as the position at time $t$ of shockwave $w$. Then they can be expressed as a function of $t$ by,
+\begin{align*}
+x_u &= \frac{3}{2} t \\
+x_w &= \frac{14}{9} t
+\end{align*}
+Taking any $t > 0$ shows us that immediately after our initial condition our shocks will no longer align and $u^2 = w$ will not hold. For example, taking $t = 1$ gives us that,
+\begin{align*}
+x_u = \frac{3}{2} \neq \frac{14}{9} = x_w
+\end{align*}
+At $t = 1$, we will have that $u = 2$ and $w = 1$, however, $w^2 \neq u = 2$. This is because the $u$ shockwave moves slower than the $w$ shockwave and so it will lag behind, no longer preserving the initial condition $u^2 = w$.
+\end{solution}
+

@@ -1,0 +1,28 @@
+\documentclass[a4paper]{report}
+\input{./setup/preamble2.tex}
+
+\usepackage{tocloft} % Style Table of contents / list of figures
+\renewcommand\cfttoctitlefont{\Huge} % Set size for TOC title
+\renewcommand\cftloftitlefont{\LARGE} % Set size for LOF title
+
+% Set the title for list of figures and reduce spacing between title and start of list 
+\renewcommand\listfigurename{List of Figures\vspace{-11mm}} 
+
+% Set things like the name and Course
+\newcommand\name{Omar Hayat}
+\newcommand\instructor{Dr. John Smith}
+\newcommand\course{Course Name}
+\newcommand\semester{Fall 2025}
+\newcommand\assignmentnumber{00}
+\newcommand\duedate{Date Here}
+\newcommand\school{University of Waterloo}
+
+\begin{document}
+
+    % import the title page
+    \input{./setup/title-page.tex}
+
+    % start lessons
+    \input{./solutions/Q_1.tex}
+    
+\end{document}

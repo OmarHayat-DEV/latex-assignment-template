@@ -1,0 +1,415 @@
+% basics
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+% \usepackage[dutch]{babel}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+ colorlinks,
+ linkcolor={black},
+ citecolor={black},
+ urlcolor={blue!80!black}
+}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{enumitem}
+% \usepackage{parskip}
+\usepackage{emptypage}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+%\usepackage{cmbright}
+%\usepackage{lmodern}
+
+%\usepackage[familydefault,light]{Chivo} %% Option 'familydefault' only if the base font of the document is to be sans serif
+%\usepackage[T1]{fontenc}
+
+%\usepackage{libertinus}
+
+%\usepackage[sfdefault]{overlock} %% Option 'sfdefault' only if the base font of the document is to be sans serif
+%\usepackage[T1]{fontenc}
+
+
+%\usepackage[scaled]{helvet}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+%\usepackage[T1]{fontenc}
+
+%\renewcommand*\sfdefault{lmssq}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+%\usepackage[T1]{fontenc}
+
+\usepackage[sfdefault,light]{inter} %% Option 'sfdefault' only if 'inter' is to be
+% the base font of the document
+\usepackage[T1]{fontenc}
+
+
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{bm}
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\renewcommand\O{\ensuremath{\emptyset}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\C{\ensuremath{\mathbb{C}}}
+\DeclareMathOperator{\sgn}{sgn}
+\usepackage{systeme}
+\let\svlim\lim\def\lim{\svlim\limits}
+\let\implies\Rightarrow
+\let\impliedby\Leftarrow
+\let\iff\Leftrightarrow
+\let\epsilon\varepsilon
+\usepackage{stmaryrd} % for \lightning
+\newcommand\contra{\scalebox{1.1}{$\lightning$}}
+% \let\phi\varphi
+
+\usepackage{geometry}
+
+
+
+
+% correct
+\definecolor{correct}{HTML}{009900}
+\newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
+\newcommand\green[1]{{\color{correct}{#1}}}
+
+
+
+% horizontal rule
+\newcommand\hr{
+    \noindent\rule[0.5ex]{\linewidth}{0.5pt}
+}
+
+
+% hide parts
+\newcommand\hide[1]{}
+
+
+
+% si unitx
+\usepackage{siunitx}
+\sisetup{locale = FR}
+% \renewcommand\vec[1]{\mathbf{#1}}
+\newcommand\mat[1]{\mathbf{#1}}
+
+
+% tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+
+\tikzset{
+    force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
+}
+
+% define some special colors for our palette 
+\definecolor{p1_violet}{RGB}{207, 186, 240}
+\definecolor{p1_dark_pink}{RGB}{255, 207, 210}
+\definecolor{p1_light_blue}{RGB}{144, 219, 244}
+\definecolor{p1_sky_blue}{RGB}{142, 236, 245}
+\definecolor{p1_lime_green}{RGB}{185, 251, 192}
+\definecolor{p1_teal}{RGB}{152, 245, 225}
+\definecolor{p1_yellow}{RGB}{251, 248, 204}
+
+\definecolor{p1_muted_green}{RGB}{216, 226, 220}
+\definecolor{p1_muted_pink}{RGB}{254, 197, 187}
+\definecolor{p1_muted_light_pink}{RGB}{250, 225, 221}
+\definecolor{p1_muted_orange}{RGB}{254, 200, 154}
+\definecolor{p1_muted_gray}{RGB}{248, 237, 235}
+
+% theorems
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_sky_blue!50!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_sky_blue!50!black, backgroundcolor=p1_sky_blue!20,
+    }
+]{thmgreenbox}
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_light_blue!50!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_light_blue!60!black, backgroundcolor=p1_light_blue!25,
+    }
+]{thmbluebox}
+
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_muted_green!40!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_muted_green!40!black, backgroundcolor=p1_muted_green!40
+    }
+]{thmblueline}
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_muted_pink!40!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_muted_pink!40!black, backgroundcolor=p1_muted_pink!30
+    }
+]{thmmutedpink}
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_muted_gray!40!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_muted_gray!40!black, backgroundcolor=p1_muted_gray!50!black!10
+    }
+]{thmmutedgray}
+
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_violet!40!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_violet!40!black, backgroundcolor=p1_violet!35,
+    }
+]{thmredbox}
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_muted_pink!65!black}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_muted_pink!65!black, backgroundcolor=p1_muted_pink!25,
+    },
+    qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+    spaceabove=0mm,
+    headfont=\bfseries\sffamily\color{p1_teal!50!black}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=0.5pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=p1_teal!50!black, backgroundcolor=p1_teal!15,
+    },
+]{thmexplanationbox}
+
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmgreenbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmredbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmbluebox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmblueline}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ rightline=false, topline=false, bottomline=false, }, qed=\qedsymbol ]{thmproofbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ nobreak, rightline=false, topline=false, bottomline=false } ]{thmexplanationbox}
+
+\declaretheorem[style=thmgreenbox, name=Definition]{definition}
+\declaretheorem[style=thmbluebox, numbered=no, name=Example]{eg}
+\declaretheorem[style=thmredbox, name=Proposition]{prop}
+
+\declaretheorem[style=thmredbox, name=Theorem]{theorem1}
+\newenvironment{theorem}{\begin{theorem1}}{\end{theorem1}}
+
+
+\declaretheorem[style=thmredbox, name=Lemma]{lemma}
+\declaretheorem[style=thmredbox, numbered=no, name=Corollary]{corollary}
+
+
+
+\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}\vspace{1mm}}
+
+
+\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}\vspace{1mm}}
+
+\declaretheorem[style=thmgreenbox, numbered=no, name=Solution]{tmpsolution}
+\newenvironment{solution}[1][]{\vspace{-11pt}\begin{tmpsolution}}{\end{tmpsolution}\vspace{1mm}}
+
+
+\declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
+\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+\declaretheorem[style=thmmutedgray, numbered=no, name=Exercise]{exercisebox}
+
+
+\newtheorem*{uovt}{UOVT}
+\newtheorem*{notation}{Notation}
+\newtheorem*{previouslyseen}{As previously seen}
+\newtheorem*{problem}{Problem}
+\newtheorem*{observe}{Observe}
+\newtheorem*{property}{Property}
+\newtheorem*{intuition}{Intuition}
+
+\usepackage{etoolbox}
+\AtEndEnvironment{vb}{\null\hfill$\diamond$}%
+\AtEndEnvironment{intermezzo}{\null\hfill$\diamond$}%
+% \AtEndEnvironment{opmerking}{\null\hfill$\diamond$}%
+
+% http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
+\makeatletter
+% \def\thm@space@setup{%
+%   \thm@preskip=\parskip \thm@postskip=0pt
+% }
+
+\newcommand{\oefening}[1]{%
+    \def\@oefening{#1}%
+    \subsection*{Oefening #1}
+}
+
+\newcommand{\suboefening}[1]{%
+    \subsubsection*{Oefening \@oefening.#1}
+}
+
+\newcommand{\exercise}[1]{%
+    \def\@exercise{#1}%
+    \subsection*{Exercise #1}
+}
+
+\newcommand{\subexercise}[1]{%
+    \subsubsection*{Exercise \@exercise.#1}
+}
+
+\usepackage{xifthen}
+
+\def\testdateparts#1{\dateparts#1\relax}
+\def\dateparts#1 \relax{
+    \marginpar{\small\textsf{\mbox{\textbf{#1}}}}
+}
+
+\def\@lesson{}%
+\newcommand{\lesson}[3]{
+    \ifthenelse{\isempty{#3}}{%
+        \def\@lesson{Lecture #1}%
+    }{%
+        \def\@lesson{Lecture #1: #3}%
+    }%
+    \subsection*{\@lesson}
+    \vspace{-5.10mm}
+    \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
+    \vspace{-12.50mm}
+    {\begin{flushright}\small\textbf{Date:\quad#2}\end{flushright}}\par
+    \vspace{0.20cm}
+%    \testdateparts{#2}
+}
+
+% \renewcommand\date[1]{\marginpar{#1}}
+
+% fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% \fancyhead[LE,RO]{Gilles Castel}
+\fancyhead[RO,L]{\@lesson}
+\fancyhead[R,LO]{}
+\fancyfoot[L,RO]{\thepage}
+\fancyfoot[C]{ }
+
+\makeatother
+
+
+% notes
+\usepackage{todonotes}
+\usepackage{tcolorbox}
+
+\tcbuselibrary{breakable}
+\newenvironment{verbetering}{\begin{tcolorbox}[
+    arc=0mm,
+    colback=white,
+    colframe=green!60!black,
+    title=Opmerking,
+    fonttitle=\sffamily,
+    breakable
+]}{\end{tcolorbox}}
+
+\newenvironment{noot}[1]{\begin{tcolorbox}[
+    arc=0mm,
+    colback=white,
+    colframe=white!60!black,
+    title=#1,
+    fonttitle=\sffamily,
+    breakable
+]}{\end{tcolorbox}}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{0.8\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand{\executeiffilenewer}[3]{%
+\ifnum\pdfstrcmp{\pdffilemoddate{#1}}%
+{\pdffilemoddate{#2}}>0%
+{\immediate\write18{#3}}\fi%
+}
+\newcommand{\includesvg}[1]{%
+\executeiffilenewer{#1.svg}{#1.pdf}%
+{inkscape -z -D --file=#1.svg %
+--export-pdf=#1.pdf --export-latex}%
+\input{#1.pdf_tex}%
+}
+
+% %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
+\pdfsuppresswarningpagegroup=1
+
+\usepackage{titlesec}    
+\titleformat
+{\chapter} % command to format
+[block] % shape: hang, display, block, frame etc
+{\sffamily\bfseries\LARGE}  % format of label + chapter title
+{Assignment} % label "Chapter 1:"
+{1.5ex} % separation label - chapter title
+{} % code before
+
+\titlespacing{\chapter}
+{0pt} %left of the label + title
+{5mm} % vertical space before the title
+{5mm} % idem after title (in ex units + glue)
+
+\titleformat{\section}
+[block] % shape 
+{\sffamily\bfseries\Large}% format (keep the chapter font family!)
+{\thesection.} % label "1.1."
+{2.8ex}% separation label -  section title 
+{}
+
+\titlespacing{\section}
+{0pt} %left of label + section title
+{*4} % before the label + section title
+{*1.5} % after
+
+
+\usepackage{silence}
+\WarningFilter{mdframed}{You got a bad break}
+\WarningFilter{hyperref}{old toc file detected}
+\hfuzz=1000pt
+\tolerance=20000
+\hbadness=19999
+
